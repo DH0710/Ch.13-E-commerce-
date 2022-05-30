@@ -23,20 +23,39 @@ router.post('/', (req, res) => {
 
   Category.create({
     category_name: req.body.category_name
+
   })
+
     .then((categoryData) => {
       res.json(categoryData);
     });
 
-
 });
 
 router.put('/:id', (req, res) => {
+
+  Category.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then((categoryData) => {
+    res.json(categoryData);
+  });
+
+  // put corresponds to what CRUD method?
   // update a category by its `id` value
 });
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
+  //delete corresponds to what CRUD method?
+
+  Category.delete({
+    where: {
+      id:req.params.id
+    }
+  })
 });
 
 module.exports = router;
