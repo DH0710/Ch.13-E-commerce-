@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Category, Product } = require('../../models/Category.js');
+const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 // localhost:3001/api/category
@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
+
   // find one category by its `id` value
   // be sure to include its associated Products
 });
