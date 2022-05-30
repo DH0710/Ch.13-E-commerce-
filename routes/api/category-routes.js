@@ -10,7 +10,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-
+Category.findOne().then((categoryData) => {
+  res.json(categoryData);
+});
   // find one category by its `id` value
   // be sure to include its associated Products
 });
